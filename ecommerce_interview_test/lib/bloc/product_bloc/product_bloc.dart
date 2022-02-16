@@ -28,7 +28,7 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
     if (response.statusCode == 200) {
       final productDetails = productFromJson(response.data);
       productList = productDetails;
-      print(productList[0].image);
+
       emit(GetAllProductSuccess());
     } else {
       emit(GetAllProductFailure());

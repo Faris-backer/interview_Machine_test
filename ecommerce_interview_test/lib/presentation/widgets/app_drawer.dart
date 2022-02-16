@@ -1,4 +1,3 @@
-import 'package:ecommerce_interview_test/presentation/screens/cart_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -26,7 +25,7 @@ class AppDrawer extends StatelessWidget {
             leading: const Icon(Icons.payment),
             title: const Text('Orders'),
             onTap: () {
-              Navigator.of(context).pushReplacementNamed(CartScreen.routeName);
+              // Navigator.of(context).pushReplacementNamed(CartScreen.routeName);
             },
           ),
           const Divider(),

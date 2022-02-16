@@ -25,6 +25,10 @@ class _$CartQauntityEventTearOff {
   Decrement decrement() {
     return const Decrement();
   }
+
+  OrderPricing totalPricing() {
+    return const OrderPricing();
+  }
 }
 
 /// @nodoc
@@ -36,18 +40,21 @@ mixin _$CartQauntityEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() increment,
     required TResult Function() decrement,
+    required TResult Function() totalPricing,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? increment,
     TResult Function()? decrement,
+    TResult Function()? totalPricing,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? increment,
     TResult Function()? decrement,
+    TResult Function()? totalPricing,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,18 +62,21 @@ mixin _$CartQauntityEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(Increment value) increment,
     required TResult Function(Decrement value) decrement,
+    required TResult Function(OrderPricing value) totalPricing,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Increment value)? increment,
     TResult Function(Decrement value)? decrement,
+    TResult Function(OrderPricing value)? totalPricing,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Increment value)? increment,
     TResult Function(Decrement value)? decrement,
+    TResult Function(OrderPricing value)? totalPricing,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -130,6 +140,7 @@ class _$Increment implements Increment {
   TResult when<TResult extends Object?>({
     required TResult Function() increment,
     required TResult Function() decrement,
+    required TResult Function() totalPricing,
   }) {
     return increment();
   }
@@ -139,6 +150,7 @@ class _$Increment implements Increment {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? increment,
     TResult Function()? decrement,
+    TResult Function()? totalPricing,
   }) {
     return increment?.call();
   }
@@ -148,6 +160,7 @@ class _$Increment implements Increment {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? increment,
     TResult Function()? decrement,
+    TResult Function()? totalPricing,
     required TResult orElse(),
   }) {
     if (increment != null) {
@@ -161,6 +174,7 @@ class _$Increment implements Increment {
   TResult map<TResult extends Object?>({
     required TResult Function(Increment value) increment,
     required TResult Function(Decrement value) decrement,
+    required TResult Function(OrderPricing value) totalPricing,
   }) {
     return increment(this);
   }
@@ -170,6 +184,7 @@ class _$Increment implements Increment {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Increment value)? increment,
     TResult Function(Decrement value)? decrement,
+    TResult Function(OrderPricing value)? totalPricing,
   }) {
     return increment?.call(this);
   }
@@ -179,6 +194,7 @@ class _$Increment implements Increment {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Increment value)? increment,
     TResult Function(Decrement value)? decrement,
+    TResult Function(OrderPricing value)? totalPricing,
     required TResult orElse(),
   }) {
     if (increment != null) {
@@ -233,6 +249,7 @@ class _$Decrement implements Decrement {
   TResult when<TResult extends Object?>({
     required TResult Function() increment,
     required TResult Function() decrement,
+    required TResult Function() totalPricing,
   }) {
     return decrement();
   }
@@ -242,6 +259,7 @@ class _$Decrement implements Decrement {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? increment,
     TResult Function()? decrement,
+    TResult Function()? totalPricing,
   }) {
     return decrement?.call();
   }
@@ -251,6 +269,7 @@ class _$Decrement implements Decrement {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? increment,
     TResult Function()? decrement,
+    TResult Function()? totalPricing,
     required TResult orElse(),
   }) {
     if (decrement != null) {
@@ -264,6 +283,7 @@ class _$Decrement implements Decrement {
   TResult map<TResult extends Object?>({
     required TResult Function(Increment value) increment,
     required TResult Function(Decrement value) decrement,
+    required TResult Function(OrderPricing value) totalPricing,
   }) {
     return decrement(this);
   }
@@ -273,6 +293,7 @@ class _$Decrement implements Decrement {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Increment value)? increment,
     TResult Function(Decrement value)? decrement,
+    TResult Function(OrderPricing value)? totalPricing,
   }) {
     return decrement?.call(this);
   }
@@ -282,6 +303,7 @@ class _$Decrement implements Decrement {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Increment value)? increment,
     TResult Function(Decrement value)? decrement,
+    TResult Function(OrderPricing value)? totalPricing,
     required TResult orElse(),
   }) {
     if (decrement != null) {
@@ -293,6 +315,117 @@ class _$Decrement implements Decrement {
 
 abstract class Decrement implements CartQauntityEvent {
   const factory Decrement() = _$Decrement;
+}
+
+/// @nodoc
+abstract class $OrderPricingCopyWith<$Res> {
+  factory $OrderPricingCopyWith(
+          OrderPricing value, $Res Function(OrderPricing) then) =
+      _$OrderPricingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$OrderPricingCopyWithImpl<$Res>
+    extends _$CartQauntityEventCopyWithImpl<$Res>
+    implements $OrderPricingCopyWith<$Res> {
+  _$OrderPricingCopyWithImpl(
+      OrderPricing _value, $Res Function(OrderPricing) _then)
+      : super(_value, (v) => _then(v as OrderPricing));
+
+  @override
+  OrderPricing get _value => super._value as OrderPricing;
+}
+
+/// @nodoc
+
+class _$OrderPricing implements OrderPricing {
+  const _$OrderPricing();
+
+  @override
+  String toString() {
+    return 'CartQauntityEvent.totalPricing()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is OrderPricing);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() increment,
+    required TResult Function() decrement,
+    required TResult Function() totalPricing,
+  }) {
+    return totalPricing();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? increment,
+    TResult Function()? decrement,
+    TResult Function()? totalPricing,
+  }) {
+    return totalPricing?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? increment,
+    TResult Function()? decrement,
+    TResult Function()? totalPricing,
+    required TResult orElse(),
+  }) {
+    if (totalPricing != null) {
+      return totalPricing();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Increment value) increment,
+    required TResult Function(Decrement value) decrement,
+    required TResult Function(OrderPricing value) totalPricing,
+  }) {
+    return totalPricing(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Increment value)? increment,
+    TResult Function(Decrement value)? decrement,
+    TResult Function(OrderPricing value)? totalPricing,
+  }) {
+    return totalPricing?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Increment value)? increment,
+    TResult Function(Decrement value)? decrement,
+    TResult Function(OrderPricing value)? totalPricing,
+    required TResult orElse(),
+  }) {
+    if (totalPricing != null) {
+      return totalPricing(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OrderPricing implements CartQauntityEvent {
+  const factory OrderPricing() = _$OrderPricing;
 }
 
 /// @nodoc

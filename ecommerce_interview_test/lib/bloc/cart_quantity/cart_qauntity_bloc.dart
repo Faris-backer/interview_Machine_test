@@ -11,7 +11,14 @@ class CartQauntityBloc extends Bloc<CartQauntityEvent, CartQauntityState> {
       return emit(state.copyWith(quantity: state.quantity + 1));
     });
     on<Decrement>((event, emit) {
-      return emit(state.copyWith(quantity: state.quantity - 1));
+      if (state.quantity == 0) {
+        return emit(state.copyWith(quantity: 0));
+      } else {
+        return emit(state.copyWith(quantity: state.quantity - 1));
+      }
+    });
+    on<OrderPricing>((event, emit) {
+      return emit(state.copyWith(quantity: state.quantity));
     });
   }
 }

@@ -1,5 +1,6 @@
 import 'package:ecommerce_interview_test/bloc/product_bloc/product_bloc.dart';
 import 'package:ecommerce_interview_test/model/product.dart';
+import 'package:ecommerce_interview_test/presentation/screens/search_screen.dart';
 import 'package:ecommerce_interview_test/presentation/widgets/app_drawer.dart';
 import 'package:ecommerce_interview_test/presentation/widgets/product_card.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,13 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
         appBar: AppBar(
           title: const Text('ShopMe'),
           centerTitle: true,
+          actions: [
+            IconButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed(SearchScreen.routeName);
+                },
+                icon: const Icon(Icons.search))
+          ],
         ),
         drawer: const AppDrawer(),
         body: BlocConsumer<ProductBloc, ProductState>(
