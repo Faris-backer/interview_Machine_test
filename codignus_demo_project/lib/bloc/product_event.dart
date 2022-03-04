@@ -1,0 +1,8 @@
+part of 'product_bloc.dart';
+
+@immutable
+abstract class ProductEvent {}
+
+class GetAllProductBanners extends ProductEvent {}
+
+class GetAllProductCatagories extends ProductEvent {}
