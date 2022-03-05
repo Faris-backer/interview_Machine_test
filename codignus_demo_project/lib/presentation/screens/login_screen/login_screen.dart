@@ -1,5 +1,6 @@
 import 'package:codignus_demo_project/core/constants.dart';
 import 'package:codignus_demo_project/presentation/screens/home_screen/home_screen.dart';
+import 'package:codignus_demo_project/presentation/screens/main_screen/main_screen.dart';
 import 'package:codignus_demo_project/presentation/widgets/logo_container.dart';
 import 'package:codignus_demo_project/presentation/widgets/social_auth_widget.dart';
 import 'package:codignus_demo_project/presentation/widgets/text_form_field_widget.dart';
@@ -24,7 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
     }
     _formKey.currentState!.save();
     Navigator.of(context).push(MaterialPageRoute(
-      builder: (context) => const HomeScreen(),
+      builder: (context) => const MainScreen(),
     ));
   }
 

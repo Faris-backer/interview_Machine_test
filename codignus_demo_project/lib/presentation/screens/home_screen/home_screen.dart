@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   List<ProductBanners> bannersList = [];
-  List<ProductCatagory> catagoryLis = [];
+  List<ProductCatagory> catagoryList = [];
 
   @override
   Widget build(BuildContext context) {
@@ -69,26 +69,52 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: screenHeight * 0.2,
                   width: screenWidth * 0.9,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.red),
+                    borderRadius: BorderRadius.circular(10),
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.white.withOpacity(0.65),
+                        Colors.pink,
+                      ],
+                    ),
+                  ),
                   child: Row(
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(16.0),
-                        child: SizedBox(
+                        child: Container(
                           height: screenHeight * 0.15,
                           width: screenWidth * 0.4,
                           child: Image.network(bannersList[index].photo!),
                         ),
                       ),
-                      const Expanded(
-                        child: Text(
-                          'Special Deal For December',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                          ),
+                      Expanded(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                              'Special Deal For December',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Container(
+                              height: 50,
+                              width: 100,
+                              decoration: BoxDecoration(
+                                  color: Colors.yellow,
+                                  borderRadius: BorderRadius.circular(10)),
+                              alignment: Alignment.center,
+                              child: const Text(
+                                'Shop Now',
+                                style: TextStyle(
+                                    color: Colors.black54, fontSize: 18),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -206,11 +232,11 @@ class _HomeScreenState extends State<HomeScreen> {
           height: screenHeight * 0.3,
           child:
               BlocBuilder<ProductBloc, ProductState>(builder: (context, state) {
-            List<ProductCatagory> productCatagoryList =
+            catagoryList =
                 BlocProvider.of<ProductBloc>(context).productCategoryList;
             if (state is GetAllProductCatagoriesSuccessfull) {
               return ListView.builder(
-                itemCount: productCatagoryList.length,
+                itemCount: 10,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -224,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Colors.grey.withOpacity(0.7),
                           image: DecorationImage(
                             image: NetworkImage(
-                              productCatagoryList[index].photo!,
+                              catagoryList[index].photo!,
                             ),
                             fit: BoxFit.cover,
                           ),
@@ -232,7 +258,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       kheigh,
                       Text(
-                        '${productCatagoryList[index].name}',
+                        '${catagoryList[index].name}',
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
